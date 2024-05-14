@@ -21,9 +21,15 @@ btn.addEventListener("click", function () {
   let guess = Number(document.querySelector("#guess").value);
   let ferq = gizlireqem - guess;
   if (!guess) {
-    alertMessage("Zəhmət olmasa rəqəm daxil edin!");
+    alertMessage("Zəhmət olmasa rəqəm daxil et🙄");
+    mesaj.style.backgroundColor = "Red";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
   } else if ((guess < 1 || guess > 100) && maxTexmin > 0) {
-    alertMessage("Daxil edilən rəqəm 1-100 aralığında olmalıdır!");
+    alertMessage("Daxil edilən rəqəm 1-100 aralığında olmalıdır🤐");
+    mesaj.style.backgroundColor = "yellow";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
     maxTexmin--;
     texminSayi++;
     texmin.innerHTML = maxTexmin;
@@ -33,7 +39,10 @@ btn.addEventListener("click", function () {
     texminSayi++;
     texmin.innerHTML = maxTexmin;
     senintexmin.innerHTML = texminSayi;
-    alertMessage("Təbriklər qazandın!");
+    alertMessage("Təbriklər qazandın🎉🎊");
+    mesaj.style.backgroundColor = "green";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
     gizli.innerHTML = gizlireqem;
   } else if (
     Number(ferq) === 1 ||
@@ -45,27 +54,39 @@ btn.addEventListener("click", function () {
     texminSayi++;
     texmin.innerHTML = maxTexmin;
     senintexmin.innerHTML = texminSayi;
-    alertMessage("Çox yaxınsan");
+    alertMessage("Çox yaxınsan🥶");
+    mesaj.style.backgroundColor = "blue";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
   } else if (guess > gizlireqem && maxTexmin > 0) {
     maxTexmin--;
     texminSayi++;
     texmin.innerHTML = maxTexmin;
     senintexmin.innerHTML = texminSayi;
-    alertMessage("Azalt");
+    alertMessage("Azalt⬇");
+    mesaj.style.backgroundColor = "red";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
   } else if (guess < gizlireqem && maxTexmin > 0) {
     maxTexmin--;
     texminSayi++;
     texmin.innerHTML = maxTexmin;
     senintexmin.innerHTML = texminSayi;
-    alertMessage("Artır");
+    alertMessage("Artır⬆");
+    mesaj.style.backgroundColor = "red";
+    mesaj.style.display = "block";
+    mesaj.style.color = "white";
   }
   if (maxTexmin <= 0) {
     texmin.innerHTML = 0;
     btn2.style.display = "block";
-    alertMessage("Uduzdun:(");
+    alertMessage("Uduzdun☹");
+    mesaj.style.backgroundColor = "red";
+    mesaj.style.color = "white";
     btn2.addEventListener("click", function () {
       maxTexmin = 3;
       btn2.style.display = "none";
+      mesaj.style.display = "none";
       texmin.innerHTML = 3;
       senintexmin.innerHTML = 0;
       texminSayi = 0;
@@ -76,3 +97,5 @@ btn.addEventListener("click", function () {
     });
   }
 });
+
+// ifoo no name functions
